@@ -1,59 +1,108 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DexorEH</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DexorEH — Loader</title>
+  <meta name="description" content="DexorEH V1 Beta — safe loader page" />
   <style>
-    /* Base */
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #000;
-      color: #fff;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
+    :root{
+      --bg:#0b0f14; --card:#0f1720; --accent:#4f85ff; --muted:#9aa5b1; --glass:rgba(255,255,255,0.04);
+      color-scheme: dark;
     }
-
-    /* Center content */
-    .hero {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-size: 5rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      letter-spacing: 4px;
-      animation: glow 3s infinite ease-in-out;
-    }
-
-    /* Smooth glow effect */
-    @keyframes glow {
-      0% { text-shadow: 0 0 10px #fff, 0 0 20px #0ff, 0 0 30px #0ff; }
-      50% { text-shadow: 0 0 20px #0ff, 0 0 40px #00f, 0 0 60px #00f; }
-      100% { text-shadow: 0 0 10px #fff, 0 0 20px #0ff, 0 0 30px #0ff; }
-    }
-
-    /* Smooth section scrolling */
-    section {
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2rem;
-    }
-
-    .alt {
-      background: linear-gradient(135deg, #111, #222);
-    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+    body{background:linear-gradient(180deg,#05060a 0%, #0a0f18 100%); color:#e6eef6; display:flex;align-items:center;justify-content:center;padding:30px}
+    .container{width:100%;max-width:960px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:28px;box-shadow:0 10px 30px rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.03)}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    h1{margin:0;font-size:20px;letter-spacing:0.6px}
+    p.lead{margin:6px 0 0;color:var(--muted);font-size:13px}
+    .row{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+    .btn{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;border:none;cursor:pointer;font-weight:600}
+    .btn.secondary{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    .card{background:var(--card);border-radius:10px;padding:16px;margin-top:18px;border:1px solid var(--glass)}
+    textarea{width:100%;height:220px;background:#07101a;border:1px solid rgba(255,255,255,0.03);color:#dfeefb;padding:12px;border-radius:8px;font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;font-size:13px;resize:vertical}
+    .status{font-size:13px;color:var(--muted);margin-top:8px}
+    footer{margin-top:16px;color:var(--muted);font-size:12px;text-align:right}
+    .hint{font-size:13px;color:var(--muted);padding:8px 10px;border-radius:8px;background:rgba(255,255,255,0.01);display:inline-block}
+    @media (max-width:600px){header{flex-direction:column;align-items:flex-start} .row{width:100%}}
   </style>
 </head>
 <body>
-  <div class="hero">DexorEH</div>
-  <section class="alt">Smooth Section 1</section>
-  <section>Smooth Section 2</section>
-  <section class="alt">Smooth Section 3</section>
-</body>
-</html>
+  <div class="container">
+    <header>
+      <div>
+        <h1>DexorEH V1 Beta</h1>
+        <p class="lead">Official loader — use the buttons below to fetch/copy the script</p>
+      </div>
+      <div style="text-align:right">
+        <div class="hint">Tip: Car Fly = X</div>
+      </div>
+    </header>
+
+    <div class="card">
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+        <button id="openRaw" class="btn">Open Raw</button>
+        <button id="copyLoad" class="btn">Copy loadstring()</button>
+        <button id="showCode" class="btn secondary">Show Code</button>
+        <button id="downloadFile" class="btn secondary">Download .lua</button>
+        <div style="margin-left:auto" id="fetchStatus" class="status">Status: idle</div>
+      </div>
+
+      <div style="margin-top:14px">
+        <label style="font-size:13px;color:var(--muted)">Raw URL</label>
+        <input id="rawUrl" style="width:100%;margin-top:6px;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:#07101a;color:#dfeefb" value="https://raw.githubusercontent.com/MrCatMemes/DexorEH/main/dexoreh.lua" />
+      </div>
+
+      <div style="margin-top:12px">
+        <textarea id="codeArea" readonly placeholder="Script will appear here when you click 'Show Code'"></textarea>
+      </div>
+    </div>
+
+    <footer>
+      by MrCatMemes — DexorEH.com
+    </footer>
+  </div>
+
+  <script>
+    const openRawBtn = document.getElementById('openRaw')
+    const copyLoadBtn = document.getElementById('copyLoad')
+    const showCodeBtn = document.getElementById('showCode')
+    const downloadBtn = document.getElementById('downloadFile')
+    const urlInput = document.getElementById('rawUrl')
+    const codeArea = document.getElementById('codeArea')
+    const status = document.getElementById('fetchStatus')
+
+    function setStatus(t, ok=true){ status.textContent = 'Status: ' + t; status.style.color = ok ? '#9fd0ff' : '#ff9a9a' }
+
+    async function fetchRaw(url){
+      setStatus('fetching...')
+      try{
+        const resp = await fetch(url)
+        if(!resp.ok){ setStatus('HTTP '+resp.status, false); return null }
+        const txt = await resp.text()
+        setStatus('fetched ✅')
+        return txt
+      }catch(err){
+        setStatus('failed — CORS/HTTPS?', false)
+        return null
+      }
+    }
+
+    openRawBtn.addEventListener('click', () => {
+      const url = urlInput.value.trim()
+      if(!url) return alert('Please enter raw URL')
+      window.open(url, '_blank')
+    })
+
+    copyLoadBtn.addEventListener('click', async () => {
+      const url = urlInput.value.trim()
+      const loadstr = loadstring(game:HttpGet("${url}"))()
+      await navigator.clipboard.writeText(loadstr)
+      setStatus('copied loadstring to clipboard')
+    })
+
+    showCodeBtn.addEventListener('click', async () => {
+      const url = urlInput.value.trim()
+      if(!url) return alert('Please enter raw URL')
+      const txt = await fetchRaw(url)
