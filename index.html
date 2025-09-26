@@ -1,85 +1,162 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DexorEH - by MrCatMemes</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>DexorEH — by MrCatMemes</title>
   <style>
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      background: #0f0f0f;
+      background: linear-gradient(180deg, #0f0f0f, #050505);
       color: #fff;
-      text-align: center;
-      padding: 50px;
+      line-height: 1.6;
     }
-    h1 {
-      color: #00ff99;
-      font-size: 2.5em;
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(0,0,0,0.9);
+      padding: 20px;
+      text-align: center;
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #00ffb3;
+    }
+    .hero {
+      padding: 100px 20px 60px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+      color: #00ffb3;
+    }
+    .hero p {
+      font-size: 1.2em;
+      color: #ccc;
+      margin-bottom: 30px;
     }
     .code-box {
       background: #1a1a1a;
-      border: 1px solid #00ff99;
-      border-radius: 12px;
+      border: 1px solid #00ffb3;
+      border-radius: 10px;
       padding: 15px;
-      margin: 20px auto;
-      width: 80%;
+      display: inline-block;
       font-family: monospace;
-      font-size: 1.2em;
+      font-size: 1.1em;
       color: #00ffcc;
     }
     button {
-      background: #00ff99;
+      margin-top: 15px;
+      background: #00ffb3;
       border: none;
       padding: 10px 20px;
-      font-size: 1.1em;
+      border-radius: 8px;
+      font-size: 1em;
       font-weight: bold;
-      border-radius: 10px;
       cursor: pointer;
       transition: 0.2s;
     }
     button:hover {
-      background: #00cc77;
+      background: #00cc88;
+    }
+    .features {
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 20px;
+    }
+    .features h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #00ffb3;
+    }
+    .feature-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+      gap: 20px;
+    }
+    .feature {
+      background: #1a1a1a;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #222;
     }
     .faq {
-      margin-top: 40px;
-      text-align: left;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
+      max-width: 800px;
+      margin: 60px auto;
+      padding: 20px;
     }
     .faq h2 {
-      color: #00ff99;
+      text-align: center;
+      margin-bottom: 30px;
+      color: #00ffb3;
     }
-    .faq p {
+    .faq-item {
       margin-bottom: 20px;
+    }
+    .faq-item strong {
+      color: #00ffb3;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #222;
+      color: #777;
+      margin-top: 60px;
     }
   </style>
 </head>
 <body>
-  <h1>DexorEH</h1>
-  <p>by <strong>MrCatMemes</strong></p>
+  <header>DexorEH</header>
 
-  <div class="code-box" id="loader">
-    loadstring(game:HttpGet("https://dexoreh.com/loader.lua"))()
+  <div class="hero">
+    <h1>DexorEH Loader</h1>
+    <p>Keyfree. Fast. Secure. By MrCatMemes.</p>
+    <div class="code-box" id="loader">
+      loadstring(game:HttpGet("https://dexoreh.com/loader.lua"))()
+    </div><br>
+    <button onclick="copyCode()">Copy Loader</button>
   </div>
-  <button onclick="copyCode()">Copy Loader</button>
 
-  <div class="faq">
+  <section class="features">
+    <h2>Main Features</h2>
+    <div class="feature-list">
+      <div class="feature"><strong>Aimbot:</strong> Smooth, Prediction, FOV</div>
+      <div class="feature"><strong>ESP:</strong> Names, Distance, Team Colors</div>
+      <div class="feature"><strong>Movement & Car Mods:</strong> Infinite Jump, Car Fly</div>
+      <div class="feature"><strong>And much more...</strong></div>
+    </div>
+  </section>
+
+  <section class="faq">
     <h2>FAQ</h2>
-    <p><strong>❓ Is DexorEH keyfree?</strong><br>✅ Yes, DexorEH is completely keyfree.</p>
-    <p><strong>❓ What features are included?</strong><br>
-      Aimbot (FOV, Smooth, Prediction), ESP (Names, Distance, Team Colors),  
-      Car Mods (Car Fly, Enter Own Car), Movement (Infinite Jump, NoClip, AntiFall),  
-      Misc (Anti AFK) and more!
-    </p>
-    <p><strong>❓ Who made DexorEH?</strong><br>🔥 Made by <em>MrCatMemes</em></p>
-  </div>
+    <div class="faq-item">
+      <strong>Is DexorEH keyfree?</strong><br>
+      Yes, DexorEH is completely keyfree.
+    </div>
+    <div class="faq-item">
+      <strong>How do I use the loader?</strong><br>
+      Copy the code above and paste it into your executor.
+    </div>
+    <div class="faq-item">
+      <strong>Does DexorEH auto-update?</strong><br>
+      Yes. The loader always fetches the latest version.
+    </div>
+    <div class="faq-item">
+      <strong>Who made DexorEH?</strong><br>
+      DexorEH is developed by MrCatMemes.
+    </div>
+  </section>
+
+  <footer>
+    © 2025 DexorEH — by MrCatMemes
+  </footer>
 
   <script>
     function copyCode() {
       const code = document.getElementById("loader").innerText;
       navigator.clipboard.writeText(code).then(() => {
-        alert("✅ Loader copied to clipboard!");
+        alert("Loader copied to clipboard");
       });
     }
   </script>
