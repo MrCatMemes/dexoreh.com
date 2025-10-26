@@ -3,184 +3,218 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DexorEH Release – Next Gen Roblox Hub</title>
+  <title>DexorEH Hub – Next Generation Roblox Scripts</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" type="image/png" href="https://i.ibb.co/JdNbXf1/hubicon.png" />
   <style>
     html { scroll-behavior: smooth; }
     body { background: linear-gradient(120deg,#15181f 0%,#202232 100%); }
-    .fadein { opacity: 0; transform: translateY(36px); transition: .8s all cubic-bezier(.35,1.3,.43,1); }
+    .fadein { opacity: 0; transform: translateY(36px); transition: .9s all cubic-bezier(.36,1.3,.43,1); }
     .fadein.visible { opacity: 1; transform: translateY(0); }
-    ::selection { background: #34d39966; }
+    ::selection { background: #34d39944; }
   </style>
 </head>
-<body class="min-h-screen flex flex-col font-sans text-white">
+<body class="min-h-screen flex flex-col font-sans text-white bg-[#15181f]">
 
-  <!-- Hero/Release Section -->
-  <section id="home" class="min-h-[98vh] flex flex-col items-center justify-center text-center relative">
-    <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
-      <div class="w-72 h-72 bg-gradient-to-tr from-green-400/20 to-cyan-600/10 blur-3xl rounded-full absolute -top-40 -left-36"></div>
-      <div class="w-60 h-60 bg-gradient-to-tr from-cyan-300/20 to-blue-400/20 blur-3xl rounded-full absolute -bottom-40 right-0"></div>
+<!-- Hero Section -->
+<section id="home" class="min-h-[100vh] flex flex-col items-center justify-center text-center relative overflow-hidden">
+  <div class="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
+    <div class="w-80 h-80 bg-gradient-to-tr from-green-400/20 to-cyan-600/10 blur-3xl rounded-full absolute -top-40 -left-36"></div>
+    <div class="w-60 h-60 bg-gradient-to-tr from-cyan-300/20 to-blue-400/20 blur-3xl rounded-full absolute -bottom-40 right-0"></div>
+  </div>
+  <img src="https://i.ibb.co/JdNbXf1/hubicon.png" alt="DexorEH Logo" class="w-32 mx-auto mb-5 fadein" />
+  <h1 class="text-6xl md:text-8xl font-extrabold tracking-tight bg-gradient-to-r from-green-300 via-cyan-400 to-white bg-clip-text text-transparent mb-5 fadein">
+    DexorEH Hub
+  </h1>
+  <p class="fadein delay-100 text-xl md:text-2xl text-zinc-200 font-light max-w-2xl mx-auto mb-8">
+    The <span class="text-green-400 font-semibold">next gen</span> Roblox Hub for Emergency Hamburg & Emden.
+    <br class="hidden md:block" />Created by <span class="text-cyan-400 font-semibold">MrCatMemes</span> for the community.
+  </p>
+  <div class="fadein delay-200">
+    <div class="bg-white/10 backdrop-blur-lg border border-white/10 rounded-3xl p-8 max-w-xl mx-auto shadow-xl mt-5 mb-3">
+      <p class="text-2xl font-bold text-green-300 mb-2">Public Release:</p>
+      <div id="countdown" class="font-mono text-3xl text-cyan-400"></div>
+      <p class="mt-3 text-base text-zinc-400">DexorEH kommt am <span class="font-bold text-green-300">31.10.2025</span> kostenlos – no key, no Discord, just vibes!</p>
     </div>
-    <h1 class="text-6xl md:text-8xl font-extrabold tracking-tight bg-gradient-to-r from-green-300 via-cyan-400 to-white bg-clip-text text-transparent mb-7 fadein">
-      DexorEH
-    </h1>
-    <div class="fadein delay-100">
-      <div class="text-xl md:text-2xl text-zinc-200 font-light max-w-2xl mx-auto mb-8">
-        The <span class="text-green-400 font-semibold">next generation</span> Roblox Hub for Emergency Hamburg.  
-        <span class="block mt-3 text-cyan-300 font-semibold">Launch: <span class="underline underline-offset-2">31.10.2025</span></span>
-      </div>
-      <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-7 max-w-xl mx-auto shadow-xl mt-5 mb-3">
-        <p class="text-2xl font-bold text-green-300 mb-2">Countdown:</p>
-        <div id="countdown" class="font-mono text-3xl text-cyan-400"></div>
-        <p class="mt-5 text-base text-zinc-400">Du willst der Erste sein? Folge <span class="text-green-300 font-semibold">MrCatMemes</span> für News!</p>
-      </div>
-      <a href="#features" class="mt-16 inline-block text-lg text-green-300 hover:text-cyan-400 underline underline-offset-4 fadein delay-300 transition">
-        Features anschauen
-      </a>
+    <a href="#features" class="mt-10 inline-block text-lg text-green-300 hover:text-cyan-400 underline underline-offset-4 fadein delay-400 transition">
+      Scroll zu Features
+    </a>
+  </div>
+</section>
+
+<!-- Announcement / Banner -->
+<section class="bg-gradient-to-r from-green-900/10 to-cyan-900/10 py-6 mb-4 fadein">
+  <div class="max-w-3xl mx-auto text-center text-lg text-green-300 font-bold tracking-wide">
+    🚨 DexorEH ist der erste komplett keyfreie Hub mit legit Police-Tools, Self-Revive und mehr. Kein Bock mehr auf Vortex/Nova Bugs? Hier kommt die Zukunft.
+  </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="py-32 px-4 max-w-7xl mx-auto fadein">
+  <h2 class="text-4xl font-bold mb-16 text-green-400 tracking-tight text-center">Features (Coming 31.10.2025)</h2>
+  <div class="grid md:grid-cols-3 gap-14">
+    <div class="bg-white/10 backdrop-blur-lg rounded-3xl shadow-xl p-10 border border-white/10 flex flex-col items-center min-h-[230px]">
+      <div class="text-2xl font-bold mb-2">Aimbot & ESP</div>
+      <div class="text-zinc-300 mb-4 text-center">Smooth legit Aimbot mit Prediction, großes FOV, Teamcheck & colored ESP für alle Jobs.</div>
+      <div class="text-cyan-400 font-semibold">Available 31.10.2025</div>
     </div>
-  </section>
-
-  <!-- Features Section -->
-  <section id="features" class="py-32 px-4 max-w-6xl mx-auto fadein">
-    <h2 class="text-4xl font-bold mb-12 text-green-400 tracking-tight text-center">Features</h2>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-14">
-      <div class="bg-white/10 backdrop-blur-lg rounded-3xl shadow-xl p-10 border border-white/10 flex flex-col items-center">
-        <div class="text-2xl font-bold mb-2 text-white">Aimbot</div>
-        <div class="text-zinc-300 mb-4">Smooth legit Aimbot mit FOV – Easy toggle.</div>
-        <div class="text-cyan-400 font-semibold text-base">Available on 31.10.2025</div>
-      </div>
-      <div class="bg-white/10 backdrop-blur-lg rounded-3xl shadow-xl p-10 border border-white/10 flex flex-col items-center">
-        <div class="text-2xl font-bold mb-2 text-white">Police Tools</div>
-        <div class="text-zinc-300 mb-4">Auto-Taser, Radar Farm, Stop Stick, Cuff, Anti-Taser uvm.</div>
-        <div class="text-cyan-400 font-semibold text-base">Available on 31.10.2025</div>
-      </div>
-      <div class="bg-white/10 backdrop-blur-lg rounded-3xl shadow-xl p-10 border border-white/10 flex flex-col items-center">
-        <div class="text-2xl font-bold mb-2 text-white">ESP</div>
-        <div class="text-zinc-300 mb-4">Farbcodes für Police, Crime, Wanted, Distance & mehr.</div>
-        <div class="text-cyan-400 font-semibold text-base">Available on 31.10.2025</div>
-      </div>
-      <div class="bg-white/10 backdrop-blur-lg rounded-3xl shadow-xl p-10 border border-white/10 flex flex-col items-center">
-        <div class="text-2xl font-bold mb-2 text-white">Car Mods</div>
-        <div class="text-zinc-300 mb-4">God Car, Car Fly, gratis Tuning, Auto-Farbe wechseln.</div>
-        <div class="text-cyan-400 font-semibold text-base">Available on 31.10.2025</div>
-      </div>
-      <div class="bg-white/10 backdrop-blur-lg rounded-3xl shadow-xl p-10 border border-white/10 flex flex-col items-center">
-        <div class="text-2xl font-bold mb-2 text-white">Teleport</div>
-        <div class="text-zinc-300 mb-4">Instant Teleports zu Dealer, Tanke, HQ, Krankenhaus etc.</div>
-        <div class="text-cyan-400 font-semibold text-base">Available on 31.10.2025</div>
-      </div>
-      <div class="bg-white/10 backdrop-blur-lg rounded-3xl shadow-xl p-10 border border-white/10 flex flex-col items-center">
-        <div class="text-2xl font-bold mb-2 text-white">Self-Revive</div>
-        <div class="text-zinc-300 mb-4">Hospital Revive & Back-to-Car – läuft automatisch.</div>
-        <div class="text-cyan-400 font-semibold text-base">Available on 31.10.2025</div>
-      </div>
+    <div class="bg-white/10 backdrop-blur-lg rounded-3xl shadow-xl p-10 border border-white/10 flex flex-col items-center min-h-[230px]">
+      <div class="text-2xl font-bold mb-2">Police Auto Farm</div>
+      <div class="text-zinc-300 mb-4 text-center">Radar Farm, Auto-Taser (mit Prediction), Auto-StopSticks, Instant Cuff – alles einstellbar.</div>
+      <div class="text-cyan-400 font-semibold">Available 31.10.2025</div>
     </div>
-    <div class="mt-20 text-center fadein delay-300">
-      <a href="#faq" class="text-lg text-green-300 hover:text-cyan-400 underline underline-offset-4 transition">
-        FAQ anzeigen
-      </a>
+    <div class="bg-white/10 backdrop-blur-lg rounded-3xl shadow-xl p-10 border border-white/10 flex flex-col items-center min-h-[230px]">
+      <div class="text-2xl font-bold mb-2">Car Mods</div>
+      <div class="text-zinc-300 mb-4 text-center">God Car, Car Fly, gratis Tuning, Auto-Farbe ändern, Vehicle Fling, alles stabil & bypassed.</div>
+      <div class="text-cyan-400 font-semibold">Available 31.10.2025</div>
     </div>
-  </section>
-
-  <!-- Roadmap Section -->
-  <section id="roadmap" class="py-32 px-4 max-w-4xl mx-auto fadein">
-    <h2 class="text-3xl font-bold mb-12 text-cyan-400 text-center">Roadmap</h2>
-    <ul class="space-y-10 text-zinc-200 text-lg">
-      <li>
-        <div class="font-bold text-white mb-1">Launch 31.10.2025</div>
-        <div>Public Release für Emergency Hamburg. Keine Keys, kein Paywall. Free forever.</div>
-      </li>
-      <li>
-        <div class="font-bold text-white mb-1">Q4 2025</div>
-        <div>Prediction-Aimbot, Community-voted Features, More Car Mods, Easter Eggs, vielleicht neue Map-Supports.</div>
-      </li>
-      <li>
-        <div class="font-bold text-white mb-1">2026</div>
-        <div>DexorEE für Emergency Emden: Public-Release geplant. Bugfixes & Feature Drops jede Woche.</div>
-      </li>
-    </ul>
-  </section>
-
-  <!-- FAQ Section -->
-  <section id="faq" class="py-32 px-4 max-w-3xl mx-auto fadein">
-    <h2 class="text-3xl font-bold mb-12 text-green-300 text-center">FAQ</h2>
-    <div class="divide-y divide-zinc-700/60">
-      <details class="py-5 group">
-        <summary class="font-semibold cursor-pointer text-xl group-hover:text-green-400">Wann kommt DexorEH raus?</summary>
-        <div class="ml-2 text-zinc-300 mt-3">Offizieller Release ist am <b>31.10.2025</b>.</div>
-      </details>
-      <details class="py-5 group">
-        <summary class="font-semibold cursor-pointer text-xl group-hover:text-green-400">Ist DexorEH kostenlos?</summary>
-        <div class="ml-2 text-zinc-300 mt-3">Komplett kostenlos, keine Keys, keine Werbung, keine Paywall. Direkt von GitHub!</div>
-      </details>
-      <details class="py-5 group">
-        <summary class="font-semibold cursor-pointer text-xl group-hover:text-green-400">Für welche Maps?</summary>
-        <div class="ml-2 text-zinc-300 mt-3">Emergency Hamburg (EH). Emden kommt bald als DexorEE Release.</div>
-      </details>
-      <details class="py-5 group">
-        <summary class="font-semibold cursor-pointer text-xl group-hover:text-green-400">Gibt es Support?</summary>
-        <div class="ml-2 text-zinc-300 mt-3">Klar, Feedback und Bugs kannst du an MrCatMemes auf TikTok oder Discord senden!</div>
-      </details>
+    <div class="bg-white/10 backdrop-blur-lg rounded-3xl shadow-xl p-10 border border-white/10 flex flex-col items-center min-h-[230px]">
+      <div class="text-2xl font-bold mb-2">Teleport</div>
+      <div class="text-zinc-300 mb-4 text-center">Instant-Teleports zu Dealer, Tanke, HQ, Krankenhause, Next Dealer uvm. Per Button.</div>
+      <div class="text-cyan-400 font-semibold">Available 31.10.2025</div>
     </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="py-32 px-4 max-w-3xl mx-auto fadein">
-    <h2 class="text-3xl font-bold mb-10 text-green-400">About</h2>
-    <div class="text-zinc-300 space-y-4 text-lg">
-      <p>
-        DexorEH entsteht, weil die großen Hubs alle paid gehen oder buggy sind.  
-        Bei uns gibt’s <span class="text-green-300">keine Keys, kein Discord-Zwang, keine Adlinks</span>.
-      </p>
-      <p>
-        Community entscheidet: Features, Updates, Bugfixes, alles wird auf TikTok & Discord gevotet.<br>
-        <b>Kein Pay2Win, kein Scam – nur Open Community Vibes.</b>
-      </p>
-      <p>
-        <span class="text-cyan-400">Fragen oder Ideen?</span> Schreib MrCatMemes!
-      </p>
+    <div class="bg-white/10 backdrop-blur-lg rounded-3xl shadow-xl p-10 border border-white/10 flex flex-col items-center min-h-[230px]">
+      <div class="text-2xl font-bold mb-2">Self-Revive</div>
+      <div class="text-zinc-300 mb-4 text-center">Automatisch zum Bett, heilt und teleportiert zurück – funktioniert auch wenn du down bist.</div>
+      <div class="text-cyan-400 font-semibold">Available 31.10.2025</div>
     </div>
-  </section>
+    <div class="bg-white/10 backdrop-blur-lg rounded-3xl shadow-xl p-10 border border-white/10 flex flex-col items-center min-h-[230px]">
+      <div class="text-2xl font-bold mb-2">Anti-Taser / Anti-AFK</div>
+      <div class="text-zinc-300 mb-4 text-center">Wirst nie wieder getasert/gekickt. Alles legit und safe, Anti-AFK ist natürlich auch am Start.</div>
+      <div class="text-cyan-400 font-semibold">Available 31.10.2025</div>
+    </div>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="mt-12 mb-5 flex flex-col items-center text-zinc-400 text-sm fadein">
-    <div class="w-24 h-0.5 rounded bg-gradient-to-r from-green-400 to-cyan-400 mb-3"></div>
-    <div>© 2025 DexorHubEH – by MrCatMemes</div>
-    <div class="mt-2">Release: 31.10.2025 – alle Rechte vorbehalten.</div>
-  </footer>
+<!-- Feature Gallery / Screens (Showcase, längerer Block) -->
+<section id="gallery" class="py-28 px-4 max-w-7xl mx-auto fadein">
+  <h2 class="text-3xl font-bold mb-8 text-cyan-400 text-center">Preview & Screens</h2>
+  <div class="grid md:grid-cols-2 gap-12">
+    <div class="rounded-3xl overflow-hidden bg-zinc-900/50 border border-white/10 shadow-xl p-7 flex flex-col justify-center items-center">
+      <img src="https://i.ibb.co/y6pSPDr/example1.png" alt="Hub Screenshot 1" class="w-full rounded-xl mb-5" />
+      <p class="text-zinc-400 text-base">Police-Tab mit allen neuen Auto-Farm-Features. Clean, ohne Emoji-Spam.</p>
+    </div>
+    <div class="rounded-3xl overflow-hidden bg-zinc-900/50 border border-white/10 shadow-xl p-7 flex flex-col justify-center items-center">
+      <img src="https://i.ibb.co/qj6F3w0/example2.png" alt="Hub Screenshot 2" class="w-full rounded-xl mb-5" />
+      <p class="text-zinc-400 text-base">Aimbot-Tab mit FOV-Settings, Prediction, Teamcheck.</p>
+    </div>
+  </div>
+  <div class="mt-14 flex flex-col items-center fadein delay-200">
+    <a href="#roadmap" class="text-lg text-green-300 hover:text-cyan-400 underline underline-offset-4 transition">Zur Roadmap</a>
+  </div>
+</section>
 
-  <script>
-    // Fade-in für jede Section beim Scrollen
-    const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) entry.target.classList.add('visible');
-        });
-      },
-      { threshold: 0.17 }
-    );
-    document.querySelectorAll('.fadein').forEach(el => observer.observe(el));
-    
-    // Countdown
-    function updateCountdown() {
-      const releaseDate = new Date("2025-10-31T16:00:00+02:00"); // Stell auf deine Launch Time ein!
-      const now = new Date();
-      let diff = Math.max(releaseDate - now, 0);
+<!-- Roadmap Section (mehr Steps!) -->
+<section id="roadmap" class="py-32 px-4 max-w-5xl mx-auto fadein">
+  <h2 class="text-3xl font-bold mb-12 text-cyan-400 text-center">Roadmap & Updates</h2>
+  <ul class="space-y-12 text-zinc-200 text-lg">
+    <li>
+      <div class="font-bold text-white mb-1">31.10.2025: Official Release</div>
+      <div>DexorEH geht live! Public free, kein Key, keine Paywall.</div>
+    </li>
+    <li>
+      <div class="font-bold text-white mb-1">Q4 2025: First Updates</div>
+      <div>Neue Features, Prediction-Aimbot, Bugfixes, Community Voting (TikTok/Discord).</div>
+    </li>
+    <li>
+      <div class="font-bold text-white mb-1">Dezember 2025</div>
+      <div>First DexorEE (Emden) Test-Version & cross-map-support, Community Beta.</div>
+    </li>
+    <li>
+      <div class="font-bold text-white mb-1">2026: Weekly Drops</div>
+      <div>Jede Woche neue Features, Easter Eggs, Quality-of-Life Updates, Votings.</div>
+    </li>
+    <li>
+      <div class="font-bold text-white mb-1">Zukunft</div>
+      <div>Support für neue Maps (wenn gewünscht), weitere Police-Jobs, weitere Community-Events.</div>
+    </li>
+  </ul>
+</section>
 
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      diff -= days * (1000 * 60 * 60 * 24);
-      const hours = Math.floor(diff / (1000 * 60 * 60));
-      diff -= hours * (1000 * 60 * 60);
-      const mins = Math.floor(diff / (1000 * 60));
-      diff -= mins * (1000 * 60);
-      const secs = Math.floor(diff / 1000);
+<!-- Community & Join Section -->
+<section id="community" class="py-32 px-4 max-w-4xl mx-auto fadein">
+  <h2 class="text-3xl font-bold mb-8 text-green-400 text-center">Werde Teil der Community</h2>
+  <div class="flex flex-col md:flex-row gap-8">
+    <div class="flex-1 bg-zinc-900/40 border border-white/10 rounded-2xl p-8 flex flex-col justify-between">
+      <div>
+        <div class="text-xl font-bold text-cyan-400 mb-2">Join Discord</div>
+        <div class="text-zinc-300 mb-4">Bock auf direkten Kontakt? Join Discord & vote für Features, teile Bugs, hol dir direkt Hilfe.</div>
+      </div>
+      <a href="#" class="mt-3 inline-block bg-green-400 hover:bg-cyan-400 text-black font-bold rounded-xl px-6 py-3 shadow-lg transition">Coming soon</a>
+    </div>
+    <div class="flex-1 bg-zinc-900/40 border border-white/10 rounded-2xl p-8 flex flex-col justify-between">
+      <div>
+        <div class="text-xl font-bold text-cyan-400 mb-2">TikTok Updates</div>
+        <div class="text-zinc-300 mb-4">Updates, Clips, Sneak Peaks: Follow MrCatMemes auf TikTok und vote bei allen Neuerungen!</div>
+      </div>
+      <a href="#" class="mt-3 inline-block bg-green-400 hover:bg-cyan-400 text-black font-bold rounded-xl px-6 py-3 shadow-lg transition">TikTok</a>
+    </div>
+  </div>
+</section>
 
-      document.getElementById("countdown").textContent =
-        ${days}d ${hours}h ${mins}m ${secs}s;
-    }
-    setInterval(updateCountdown, 1000);
-    updateCountdown();
-  </script>
-</body>
-</html>
+<!-- Testimonials / Feedback (User-Quotes, langer Block) -->
+<section id="testimonials" class="py-32 px-4 max-w-4xl mx-auto fadein">
+  <h2 class="text-3xl font-bold mb-8 text-cyan-400 text-center">Community Feedback</h2>
+  <div class="flex flex-col md:flex-row gap-8">
+    <div class="flex-1 bg-zinc-800/70 rounded-2xl p-8 border border-white/10 shadow-lg">
+      <div class="text-lg text-zinc-200 mb-4">„Ich hab an einem Tag 15k XP gefarmt, easy Lambo gekauft. Kein anderer Hub macht das so smooth wie DexorEH.“</div>
+      <div class="font-bold text-green-300">– Beta Tester #1</div>
+    </div>
+    <div class="flex-1 bg-zinc-800/70 rounded-2xl p-8 border border-white/10 shadow-lg">
+      <div class="text-lg text-zinc-200 mb-4">„Car Fly von Dexor ist wirklich OP, keine Crashes, keine Kicks. Der Trixo Hub sieht dagegen aus wie Kindergeburtstag.“</div>
+      <div class="font-bold text-green-300">– Community Feedback</div>
+    </div>
+  </div>
+  <div class="mt-12 text-center">
+    <a href="#faq" class="text-lg text-green-300 hover:text-cyan-400 underline underline-offset-4 transition">FAQ & Support</a>
+  </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" class="py-32 px-4 max-w-3xl mx-auto fadein">
+  <h2 class="text-3xl font-bold mb-12 text-green-300 text-center">FAQ</h2>
+  <div class="divide-y divide-zinc-700/60">
+    <details class="py-5 group">
+      <summary class="font-semibold cursor-pointer text-xl group-hover:text-green-400">Wann kommt DexorEH raus?</summary>
+      <div class="ml-2 text-zinc-300 mt-3">Offizieller Release: <b>31.10.2025</b> um 16 Uhr.</div>
+    </details>
+    <details class="py-5 group">
+      <summary class="font-semibold cursor-pointer text-xl group-hover:text-green-400">Ist DexorEH kostenlos?</summary>
+      <div class="ml-2 text-zinc-300 mt-3">Ja, 100% kostenlos, kein Key, keine Werbung, kein Discord-Zwang.</div>
+    </details>
+    <details class="py-5 group">
+      <summary class="font-semibold cursor-pointer text-xl group-hover:text-green-400">Kann ich als Tester joinen?</summary>
+      <div class="ml-2 text-zinc-300 mt-3">Melde dich auf TikTok oder Discord für die nächste Community-Beta.</div>
+    </details>
+    <details class="py-5 group">
+      <summary class="font-semibold cursor-pointer text-xl group-hover:text-green-400">Welche Maps?</summary>
+      <div class="ml-2 text-zinc-300 mt-3">Emergency Hamburg (EH). Emden folgt als DexorEE Release.</div>
+    </details>
+    <details class="py-5 group">
+      <summary class="font-semibold cursor-pointer text-xl group-hover:text-green-400">Ist DexorEH sicher?</summary>
+      <div class="ml-2 text-zinc-300 mt-3">Wir benutzen keine “.bat” Dateien oder unsafe Exploits. Der Source kommt auf GitHub.</div>
+    </details>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-32 px-4 max-w-3xl mx-auto fadein">
+  <h2 class="text-3xl font-bold mb-10 text-green-400">Über DexorEH</h2>
+  <div class="text-zinc-300 space-y-5 text-lg">
+    <p>
+      DexorEH ist das Community Projekt gegen die “Paid”-Welle bei Roblox Hubs.<br>
+      Alle Scripts sind 100% free, keine Keys, kein Scam, kein Discord-Zwang.
+    </p>
+    <p>
+      Jede Woche Updates & neue Features: Votings, Bugfixes und direktes Feedback via TikTok.
+    </p>
+    <p>
+      Entwickler: <span class="text-cyan-400">MrCatMemes</span> und die Community.<br>
+      Bei Fragen oder für Vorschläge – schreib direkt auf TikTok.
+    </p>
+  </div>
+</section>
+
+<!-- Footer & Credits -->
+<footer class="mt-12 mb-8 flex flex-col items-center text-zinc-400 text-sm fadein">
+  <div
