@@ -1,167 +1,256 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>DexorEH – Release 31.10</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:800,400&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DexorHubEH - Coming 31.10!</title>
+  <meta name="description" content="DexorHubEH - The next gen Roblox hub. Release on 31.10.2025.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #171d29;
-      --panel: #23293a;
-      --accent: #00ffd0;
-      --txt: #f6fcff;
-      --muted: #94b0c7;
-      --glow: 0 4px 60px #00ffd044;
-      --gradient: linear-gradient(92deg, #00ffd0 0%, #0086ff 100%);
+      --main-bg: #191A1F;
+      --card-bg: #232429cc;
+      --accent: #6C47FF;
+      --text: #f3f4fa;
+      --subtle: #b6b8c9;
+      --border: #242434;
+      --danger: #f25454;
+      --good: #4af391;
+      --warning: #ffe66c;
     }
     html, body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Montserrat', Arial, sans-serif;
-      background: var(--bg);
-      color: var(--txt);
+      padding: 0; margin: 0;
+      background: var(--main-bg);
+      font-family: 'Inter', Arial, sans-serif;
+      color: var(--text);
       scroll-behavior: smooth;
       min-height: 100vh;
     }
     header {
-      width: 100%;
-      background: var(--panel);
-      box-shadow: var(--glow);
-      position: sticky;
-      top: 0;
-      z-index: 10;
+      padding: 3rem 0 2rem 0;
       text-align: center;
-      padding: 2.2rem 0 1.4rem 0;
+      background: linear-gradient(120deg, #191A1F 65%, #312477 100%);
+      box-shadow: 0 8px 32px #0006;
     }
-    .brand {
-      font-size: 2.6rem;
-      font-weight: 800;
-      background: var(--gradient);
-      background-clip: text;
+    h1 {
+      font-size: 3.1rem;
+      letter-spacing: -1px;
+      font-weight: 900;
+      background: linear-gradient(90deg, #8d5cf6 20%, #65e6ea 90%);
       -webkit-background-clip: text;
-      color: transparent;
       -webkit-text-fill-color: transparent;
-      letter-spacing: .08em;
-      margin-bottom: .7rem;
-      margin-top: 0;
-      text-shadow: 0 2px 24px #00ffd055;
+      margin: 0;
+      filter: drop-shadow(0 4px 24px #6C47FF50);
     }
-    .release {
+    h2 {
+      font-size: 2.1rem;
+      margin: 2.2rem 0 .7rem;
       font-weight: 700;
-      color: #ffd600;
-      font-size: 1.1rem;
-      background: #1d2638;
-      border-radius: 2em;
-      padding: .5em 2em;
-      margin: .8em auto 0 auto;
-      display: inline-block;
-      letter-spacing: .1em;
-      box-shadow: 0 1px 24px #00ffd02b;
+      color: var(--accent);
+      letter-spacing: -.5px;
     }
-    .hero {
-      min-height: 60vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background: radial-gradient(circle at 60% 10%, #0086ff22 0%, transparent 60%);
-      padding: 3rem 1rem 2rem 1rem;
-    }
-    .hero-text {
-      max-width: 480px;
-      margin: 1.3rem auto 0 auto;
+    .desc {
       font-size: 1.13rem;
-      color: var(--muted);
-      font-weight: 400;
-      line-height: 1.5;
+      color: var(--subtle);
+      margin: 1.3rem auto 0 auto;
+      max-width: 520px;
+      line-height: 1.7;
     }
-    .teasers {
-      margin: 3.5rem auto 0 auto;
-      display: flex;
-      gap: 2.5rem;
-      justify-content: center;
-      flex-wrap: wrap;
-      max-width: 700px;
+    .teaser-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.3rem;
+      padding: 2.5rem 1rem 0 1rem;
+      max-width: 1100px;
+      margin: 0 auto;
     }
     .teaser {
-      flex: 1 1 100px;
-      background: var(--panel);
-      border-radius: 1.3em;
-      padding: 2.1em 1.3em 1.3em 1.3em;
-      min-width: 120px;
-      box-shadow: 0 2px 22px #0086ff18;
-      text-align: center;
-      transition: box-shadow .25s;
-      font-size: 1.13rem;
-      font-weight: 800;
-      letter-spacing: .04em;
-      color: var(--accent);
-      border: 1.5px solid #00ffd04b;
-      margin-bottom: .8rem;
+      background: var(--card-bg);
+      border-radius: 1.4rem;
+      box-shadow: 0 8px 32px #21213c55;
+      border: 1.5px solid var(--border);
+      padding: 2.3rem 2.1rem 2.3rem 2.1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-height: 260px;
+      position: relative;
+      transition: transform .17s cubic-bezier(.36,1.02,.77,1), box-shadow .2s;
     }
-    .teaser span {
-      color: var(--txt);
-      font-size: .93em;
-      font-weight: 400;
-      letter-spacing: .01em;
-      display: block;
-      margin-top: .5em;
-      opacity: .73;
+    .teaser:hover {
+      transform: translateY(-8px) scale(1.03);
+      box-shadow: 0 12px 38px #6C47FF22, 0 2px 12px #0006;
+      border-color: #6C47FF90;
     }
-    .about {
-      text-align: center;
-      color: #b7dafc;
-      max-width: 550px;
+    .teaser .feature-title {
+      font-size: 1.22rem;
+      font-weight: 700;
+      color: var(--good);
+      margin-bottom: 0.5rem;
+      letter-spacing: -.2px;
+    }
+    .teaser .feature-title.police { color: #6C47FF;}
+    .teaser .feature-title.aimbot { color: var(--danger);}
+    .teaser .feature-title.misc { color: var(--warning);}
+    .teaser .feature-title.car { color: #65e6ea;}
+    .teaser .feature-title.esp { color: #ffe66c;}
+    .teaser .feature-title.coming { color: #b6b8c9;}
+    .teaser .feature-desc {
+      font-size: 1.06rem;
+      color: var(--subtle);
+      margin-bottom: 0.7rem;
+      font-weight: 500;
+      line-height: 1.55;
+    }
+    .faq-section {
+      max-width: 820px;
       margin: 4rem auto 0 auto;
-      font-size: 1rem;
+      padding: 1.7rem 1.3rem;
+    }
+    .faq-list {
+      border-radius: 1.2rem;
+      background: #1b1b24bb;
+      box-shadow: 0 4px 20px #0004;
+      padding: 2.4rem 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.7rem;
+      margin-bottom: 3.5rem;
+      border: 1.5px solid #232342;
+    }
+    .faq-q {
+      color: var(--accent);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.2rem;
+    }
+    .faq-a {
+      color: var(--subtle);
+      font-size: 1.03rem;
+      font-weight: 500;
+      line-height: 1.7;
+      margin-bottom: 0.1rem;
     }
     footer {
-      margin-top: 5rem;
-      padding: 2.1rem 0 1.2rem 0;
+      margin-top: 4.5rem;
+      padding: 1.2rem 0 2rem 0;
       text-align: center;
-      color: #00ffd0;
-      background: #151922;
-      font-size: .96rem;
-      letter-spacing: .07em;
-      border-top: 1px solid #0fa4;
+      color: #888aaa;
+      font-size: 1.07rem;
+      letter-spacing: .1px;
+      background: #181821;
+      border-top: 1.5px solid #232342;
+      box-shadow: 0 -4px 40px #0002;
     }
-    @media (max-width: 600px) {
-      .teasers { flex-direction: column; gap: 1.3rem;}
-      .hero { min-height: 40vh;}
-      .brand { font-size: 2rem;}
+    /* smooooth Fade in for cards */
+    .teaser, .faq-section {
+      opacity: 0;
+      transform: translateY(45px);
+      animation: fadeInY .9s cubic-bezier(.22,1.15,.54,1) forwards;
+    }
+    .faq-section { animation-delay: .7s; }
+    .teaser:nth-child(1) { animation-delay: .3s; }
+    .teaser:nth-child(2) { animation-delay: .42s; }
+    .teaser:nth-child(3) { animation-delay: .54s; }
+    .teaser:nth-child(4) { animation-delay: .64s; }
+    .teaser:nth-child(5) { animation-delay: .76s; }
+    .teaser:nth-child(6) { animation-delay: .88s; }
+    @keyframes fadeInY {
+      to { opacity: 1; transform: none; }
+    }
+    @media (max-width: 650px) {
+      header {padding:2.1rem 0 1rem 0;}
+      h1 { font-size: 2.1rem;}
+      .teaser-section { grid-template-columns: 1fr; padding: 1.1rem .4rem 0 .4rem;}
+      .faq-section {padding: 1.1rem .4rem;}
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="brand">DexorEH Hub</div>
-    <div class="release">Release: 31.10</div>
-  </header>
-  <main>
-    <section class="hero">
-      <div class="hero-text">
-        Willkommen zur neuen Generation von Roblox Hubs.<br>
-        Cleanes UI, einzigartige Features und die smootheste Experience.<br>
-        <span style="color:#fff; font-weight:700;">DexorEH</span> startet exklusiv am <span style="color:#ffd600">31. Oktober</span>.
-      </div>
-      <div class="teasers">
-        <div class="teaser">Aimbot <span>Legit. Präzise. Für jeden.</span></div>
-        <div class="teaser">Police <span>Tools, Automation, Speed.</span></div>
-        <div class="teaser">Vehicle <span>Free Tuning & mehr.</span></div>
-        <div class="teaser">ESP <span>Teamcheck. Übersicht. Klarheit.</span></div>
-        <div class="teaser">Self Revive <span>Try again. Instantly.</span></div>
-      </div>
-    </section>
-    <div class="about">
-      DexorEH ist kein 0815 Script. Kein Key. Kein Paywall. <br>
-      Gemacht für die Community, mit Fokus auf Stabilität & Next-Gen UX.<br>
-      <span style="color:#ffd600;">Release: 31.10 – Save the Date.</span>
+    <h1>DexorHubEH</h1>
+    <div class="desc">
+      Der <b>neue Generation Roblox Hub</b> <br>
+      <b>Release: 31.10.2025</b> <br>
+      Police, Aimbot, Car, ESP, uvm.<br>
+      <span style="color:#b8bdf2;">Keyfree, No Pay2Win, Clean UI.</span>
     </div>
-  </main>
+  </header>
+  <section class="teaser-section">
+    <div class="teaser">
+      <div class="feature-title police">Police</div>
+      <div class="feature-desc">
+        Alles für Cops: Radar Farm, Auto-Taser, XP Farm, <br>Stop Stick – ab 31.10 verfügbar!
+      </div>
+    </div>
+    <div class="teaser">
+      <div class="feature-title aimbot">Aimbot</div>
+      <div class="feature-desc">
+        Lock on! Präziser, smooter Aimbot – zielt wie ein Pro. FOV einstellbar.<br>
+        <b>Launch 31.10</b>
+      </div>
+    </div>
+    <div class="teaser">
+      <div class="feature-title car">Car Mods</div>
+      <div class="feature-desc">
+        Autofly, Godcar, Engine Mods und mehr.<br>
+        <span style="color:#65e6ea">Ab Release kostenlos!</span>
+      </div>
+    </div>
+    <div class="teaser">
+      <div class="feature-title esp">ESP</div>
+      <div class="feature-desc">
+        Teamcheck: Police, Crime, Wanted, LKW, Bus – alles <b>mit Farben</b> und Live Update.
+      </div>
+    </div>
+    <div class="teaser">
+      <div class="feature-title misc">Misc</div>
+      <div class="feature-desc">
+        Self Revive, Anti-Taser, XP-Boost, <br>Instant-Cuff & noch mehr crazy Features.
+      </div>
+    </div>
+    <div class="teaser">
+      <div class="feature-title coming">Weitere Features</div>
+      <div class="feature-desc">
+        Viele neue Sachen kommen <b>31.10</b><br>
+        Discord-Bypass, Instant Money & mehr.
+      </div>
+    </div>
+  </section>
+  <section class="faq-section">
+    <h2>FAQ</h2>
+    <div class="faq-list">
+      <div>
+        <div class="faq-q">Ist DexorHubEH keyfree?</div>
+        <div class="faq-a">Ja, DexorHubEH ist <b>komplett keyfrei</b> und bleibt immer kostenlos.</div>
+      </div>
+      <div>
+        <div class="faq-q">Wann kommt der Release?</div>
+        <div class="faq-a">Am <b>31.10.2025</b> – du kannst den Hub ab dann direkt kostenlos nutzen.</div>
+      </div>
+      <div>
+        <div class="faq-q">Was ist mit Ban-Sicherheit?</div>
+        <div class="faq-a">DexorHubEH nutzt smarte Methoden, keine .bat-Dateien, keine Keylogs, kein Scam. Trotzdem: <b>Benutzung auf eigene Gefahr!</b></div>
+      </div>
+      <div>
+        <div class="faq-q">Welche Features gibt’s?</div>
+        <div class="faq-a">Aimbot, Police Stuff, Autofly, ESP, Self Revive, Godcar, <b>und immer neue Updates</b>.</div>
+      </div>
+      <div>
+        <div class="faq-q">Kann ich meinen Freund einladen?</div>
+        <div class="faq-a">Klar! DexorHubEH bleibt ohne Invite-System, open for everyone.</div>
+      </div>
+      <div>
+        <div class="faq-q">Kann ich Vorschläge einreichen?</div>
+        <div class="faq-a">Ja, einfach am Release-Tag im Hub auf „Feedback“ klicken.</div>
+      </div>
+    </div>
+  </section>
   <footer>
-    © 2025 DexorEH – Roblox Revolution.  
+    © 2025 DexorHubEH – by MrCatMemes. Kein Verkauf, kein Pay2Win, nur Fun.<br>
+    Next Gen Roblox Hub. <span style="color:#65e6ea">Coming 31.10.2025!</span>
   </footer>
 </body>
 </html>
