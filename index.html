@@ -3,181 +3,157 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DexorEH - Emergency Hamburg Hub</title>
+  <title>DexorEH | Next Gen Roblox Hub</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" type="image/png" href="https://i.ibb.co/JdNbXf1/hubicon.png" />
   <style>
     html { scroll-behavior: smooth; }
-    .faq-q { cursor: pointer; }
-    .faq-a { display: none; }
-    .faq-q.active + .faq-a { display: block; }
+    body { background: linear-gradient(120deg,#1a1e24 0%,#191a23 100%); }
+    .fadein { opacity: 0; transform: translateY(36px); transition: .8s all cubic-bezier(.35,1.3,.43,1); }
+    .fadein.visible { opacity: 1; transform: translateY(0); }
   </style>
 </head>
-<body class="bg-gradient-to-br from-gray-900 to-zinc-900 text-white min-h-screen">
+<body class="min-h-screen flex flex-col font-sans text-white">
 
   <!-- Hero Section -->
-  <section class="min-h-[75vh] flex flex-col items-center justify-center px-4 text-center">
-    <h1 class="text-5xl md:text-6xl font-bold tracking-tight mt-20 mb-4">
+  <section id="home" class="min-h-[90vh] flex flex-col items-center justify-center relative">
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+      <div class="w-64 h-64 bg-gradient-to-tr from-green-400/20 to-cyan-600/10 blur-3xl rounded-full absolute -top-32 -left-28"></div>
+      <div class="w-60 h-60 bg-gradient-to-tr from-blue-400/10 to-green-400/20 blur-3xl rounded-full absolute -bottom-32 right-0"></div>
+    </div>
+    <h1 class="text-6xl md:text-7xl font-extrabold tracking-tight bg-gradient-to-r from-green-300 via-cyan-400 to-white bg-clip-text text-transparent mb-3 fadein">
       DexorEH
     </h1>
-    <p class="text-2xl md:text-3xl max-w-2xl mx-auto text-gray-300 mb-8">
-      The most advanced free script hub for Emergency Hamburg.  
-      100% keyless. 100% features.
+    <p class="text-2xl md:text-3xl text-zinc-200 font-light mb-7 max-w-2xl fadein delay-150">
+      Die <b>neue Generation</b> für Emergency Hamburg – Keyfree Roblox Hub.  
+      Maximale Performance. Gratis. Keine Kompromisse.
     </p>
-    <div class="bg-zinc-800/90 rounded-xl p-4 max-w-xl w-full mx-auto mb-6 shadow-lg">
-      <label class="block text-xs text-gray-400 mb-2">Loadstring</label>
-      <div class="flex w-full gap-2">
+    <div class="bg-white/10 backdrop-blur-md rounded-2xl shadow-xl p-6 w-full max-w-lg mb-4 fadein delay-300 border border-white/10">
+      <label class="block text-xs text-zinc-400 mb-2">Loadstring</label>
+      <div class="flex gap-2">
         <input
           id="loadstring"
           type="text"
-          class="bg-zinc-900 rounded px-2 py-1 flex-1 font-mono text-green-400 text-xs outline-none"
+          class="flex-1 bg-black/20 rounded px-2 py-1 font-mono text-green-400 text-xs outline-none border border-zinc-800"
           readonly
           value='loadstring(game:HttpGet("https://raw.githubusercontent.com/MrCatMemes/dexoree/refs/heads/main/dexoree.lua"))()'
         />
         <button
-          onclick="navigator.clipboard.writeText(document.getElementById('loadstring').value); this.textContent='Copied!'; setTimeout(()=>this.textContent='Copy',1200);"
-          class="px-4 py-1 bg-green-500 hover:bg-green-600 text-black font-bold rounded transition"
+          onclick="navigator.clipboard.writeText(document.getElementById('loadstring').value); this.textContent='Copied!'; setTimeout(()=>this.textContent='Copy',1100);"
+          class="px-4 py-1 bg-gradient-to-r from-green-400 via-cyan-400 to-green-500 hover:from-cyan-400 hover:to-green-400 font-semibold rounded transition text-black shadow"
         >Copy</button>
       </div>
     </div>
-    <a href="#features" class="mt-10 text-lg text-green-300 underline hover:text-green-400 transition">Discover Features</a>
+    <a href="#features" class="mt-8 text-lg text-green-300 hover:text-cyan-400 underline underline-offset-4 fadein delay-500 transition">
+      Features entdecken
+    </a>
   </section>
 
-  <!-- Section: Why DexorEH? -->
-  <section class="py-20 px-4 max-w-4xl mx-auto">
-    <h2 class="text-3xl font-bold mb-6 text-green-400">Why DexorEH?</h2>
-    <div class="grid md:grid-cols-2 gap-12 text-gray-200">
-      <div>
-        <p class="mb-4">
-          DexorEH wurde von Grund auf für maximale Performance, Stabilität und Nutzerfreundlichkeit gebaut. Keine Keys, keine Paywall, keine Compromisse.
-        </p>
-        <ul class="list-disc pl-6 mb-2">
-          <li>Blitzschnelle UI (kein Rayfield, kein Spam)</li>
-          <li>Stabile Features, die wirklich funktionieren</li>
-          <li>Regelmäßige Updates – angepasst ans Spiel</li>
-          <li>Cleanes Design, kein Kiddie-Look</li>
-        </ul>
+  <!-- Features Section -->
+  <section id="features" class="py-24 px-4 max-w-6xl mx-auto fadein">
+    <h2 class="text-4xl font-bold mb-10 text-green-400 tracking-tight">Features</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div class="bg-white/10 backdrop-blur-md rounded-2xl shadow-lg p-7 hover:scale-[1.04] transition-all duration-300 border border-white/10">
+        <div class="text-xl font-bold mb-2 text-white">Aimbot</div>
+        <div class="text-zinc-300">Smooth Aim & legit Feeling, mit FOV. Easy ein- und ausschalten.</div>
       </div>
-      <div>
-        <p class="mb-4">
-          DexorEH ist entstanden, weil viele große Hubs langsam auf Key oder Paid wechseln oder einfach zu verbuggt sind. Hier hast du alles Free und Community-driven.
-        </p>
-        <ul class="list-disc pl-6">
-          <li>Kein Discord-Zwang</li>
-          <li>Sicher, anonym, und einfach nutzbar</li>
-          <li>Direkt aus GitHub (Open Source Core)</li>
-          <li>Von Spielern für Spieler entwickelt</li>
-        </ul>
+      <div class="bg-white/10 backdrop-blur-md rounded-2xl shadow-lg p-7 hover:scale-[1.04] transition-all duration-300 border border-white/10">
+        <div class="text-xl font-bold mb-2 text-white">Police Tools</div>
+        <div class="text-zinc-300">Auto-Taser, Radar Farm, Stop Stick, Cuff – alles für Cop Spieler.</div>
+      </div>
+      <div class="bg-white/10 backdrop-blur-md rounded-2xl shadow-lg p-7 hover:scale-[1.04] transition-all duration-300 border border-white/10">
+        <div class="text-xl font-bold mb-2 text-white">ESP</div>
+        <div class="text-zinc-300">Sieh alle Gegner, Wanted, Police, mit Farbcodes & Distanz.</div>
+      </div>
+      <div class="bg-white/10 backdrop-blur-md rounded-2xl shadow-lg p-7 hover:scale-[1.04] transition-all duration-300 border border-white/10">
+        <div class="text-xl font-bold mb-2 text-white">Car Mods</div>
+        <div class="text-zinc-300">God Car, Car Fly, gratis Tuning & schnelle Farbanpassung.</div>
+      </div>
+      <div class="bg-white/10 backdrop-blur-md rounded-2xl shadow-lg p-7 hover:scale-[1.04] transition-all duration-300 border border-white/10">
+        <div class="text-xl font-bold mb-2 text-white">Teleport</div>
+        <div class="text-zinc-300">Instant zu Dealer, Tanke, Hauptquartier, alle wichtigen Orte.</div>
+      </div>
+      <div class="bg-white/10 backdrop-blur-md rounded-2xl shadow-lg p-7 hover:scale-[1.04] transition-all duration-300 border border-white/10">
+        <div class="text-xl font-bold mb-2 text-white">Self-Revive</div>
+        <div class="text-zinc-300">Heal & Back-to-Car. Save selbst bei Tod – automatisch.</div>
       </div>
     </div>
   </section>
 
-  <!-- Features (nur die großen) -->
-  <section id="features" class="py-20 px-4 max-w-5xl mx-auto">
-    <h2 class="text-3xl font-bold mb-12 text-green-400">Features</h2>
-    <div class="grid md:grid-cols-3 gap-10">
-      <div class="bg-zinc-900/85 rounded-xl p-7 shadow-lg">
-        <h3 class="text-xl font-semibold mb-1">Aimbot</h3>
-        <p class="text-gray-400 text-sm">Automatisch auf Gegner zielen – smooth und legit. Mit FOV-Check.</p>
-      </div>
-      <div class="bg-zinc-900/85 rounded-xl p-7 shadow-lg">
-        <h3 class="text-xl font-semibold mb-1">ESP</h3>
-        <p class="text-gray-400 text-sm">Sieh alle Spieler, Wanted, Police und mehr – mit Teamfarbe!</p>
-      </div>
-      <div class="bg-zinc-900/85 rounded-xl p-7 shadow-lg">
-        <h3 class="text-xl font-semibold mb-1">Police Tools</h3>
-        <p class="text-gray-400 text-sm">Auto-Taser, Auto Stop Stick, Radar Farm – volle Kontrolle als Cop.</p>
-      </div>
-      <div class="bg-zinc-900/85 rounded-xl p-7 shadow-lg">
-        <h3 class="text-xl font-semibold mb-1">Car Mods</h3>
-        <p class="text-gray-400 text-sm">God Car, Car Fly, gratis Tuning & Farbauswahl – maximaler Spaß.</p>
-      </div>
-      <div class="bg-zinc-900/85 rounded-xl p-7 shadow-lg">
-        <h3 class="text-xl font-semibold mb-1">Teleport</h3>
-        <p class="text-gray-400 text-sm">Egal wohin – direkt per Button zum Dealer, Tanke oder geheimen Spot.</p>
-      </div>
-      <div class="bg-zinc-900/85 rounded-xl p-7 shadow-lg">
-        <h3 class="text-xl font-semibold mb-1">Self Revive</h3>
-        <p class="text-gray-400 text-sm">Fahrzeug-Save nach Tod. Heal und wieder zurück – alles automatisch.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Changelog/History für noch mehr Länge -->
-  <section id="changelog" class="py-20 px-4 max-w-3xl mx-auto">
-    <h2 class="text-3xl font-bold mb-8 text-green-400">Changelog & Roadmap</h2>
-    <ul class="space-y-6 text-gray-300">
+  <!-- Changelog -->
+  <section id="changelog" class="py-24 px-4 max-w-3xl mx-auto fadein">
+    <h2 class="text-3xl font-bold mb-8 text-cyan-400">Changelog & Roadmap</h2>
+    <ul class="space-y-7 text-zinc-300">
       <li>
-        <div class="font-bold">24. Oktober 2025 – DexorEH v1.0</div>
-        <div class="ml-3">Public Release für Emergency Hamburg. Alles komplett Free, erster komplett stabiler Release.</div>
+        <div class="font-bold text-white">24. Oktober 2025 – Release v1.0</div>
+        <div class="ml-3">DexorEH für Emergency Hamburg geht public. Keine Keys, keine Paywall. Fast alles neu entwickelt.</div>
       </li>
       <li>
-        <div class="font-bold">Nächste Woche</div>
-        <div class="ml-3">Update: Verbesserte Prediction für Auto Taser, noch mehr Teleports, neues Tuning-System, ESP-Optimierung, und neue UI-Funktionen.</div>
+        <div class="font-bold text-white">Geplante Updates</div>
+        <div class="ml-3">Prediction Update für AutoTaser, Teleport zu allen wichtigen Spots, More Car Mods, und Community Voting für Features.</div>
       </li>
       <li>
-        <div class="font-bold">In Planung</div>
-        <div class="ml-3">Bugfixes, weitere Fahrzeug-Funktionen, evtl. kleine Easter Eggs. Wünsche? DM an MrCatMemes!</div>
+        <div class="font-bold text-white">Support & Ideen?</div>
+        <div class="ml-3">Bugs, Wünsche oder Feedback? Schreib direkt an MrCatMemes.</div>
       </li>
     </ul>
   </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="py-20 px-4 max-w-3xl mx-auto">
-    <h2 class="text-3xl font-bold mb-8 text-green-400">FAQ</h2>
-    <div class="space-y-4">
-      <div>
-        <div class="faq-q text-lg font-semibold bg-zinc-900/80 rounded p-3 hover:bg-zinc-800 transition">Ist DexorEH wirklich keyfree?</div>
-        <div class="faq-a text-gray-300 bg-zinc-800 rounded px-4 py-3 mb-1">Ja, DexorEH ist komplett keyfree. Keine Werbung, kein Keysystem, kein Scam.</div>
-      </div>
-      <div>
-        <div class="faq-q text-lg font-semibold bg-zinc-900/80 rounded p-3 hover:bg-zinc-800 transition">Wie benutze ich DexorEH?</div>
-        <div class="faq-a text-gray-300 bg-zinc-800 rounded px-4 py-3 mb-1">Loadstring kopieren, mit Executor (z.B. Solara) injecten – fertig!</div>
-      </div>
-      <div>
-        <div class="faq-q text-lg font-semibold bg-zinc-900/80 rounded p-3 hover:bg-zinc-800 transition">Welcher Executor funktioniert am besten?</div>
-        <div class="faq-a text-gray-300 bg-zinc-800 rounded px-4 py-3 mb-1">Solara, WeAreDevs, Delta – getestet und stabil. Paid-Executors laufen auch.</div>
-      </div>
-      <div>
-        <div class="faq-q text-lg font-semibold bg-zinc-900/80 rounded p-3 hover:bg-zinc-800 transition">Kann ich gebannt werden?</div>
-        <div class="faq-a text-gray-300 bg-zinc-800 rounded px-4 py-3 mb-1">Bis jetzt keine Bans bekannt. Aber alles auf eigene Gefahr, kein Hub ist 100% save!</div>
-      </div>
-      <div>
-        <div class="faq-q text-lg font-semibold bg-zinc-900/80 rounded p-3 hover:bg-zinc-800 transition">Wie bekomme ich Support?</div>
-        <div class="faq-a text-gray-300 bg-zinc-800 rounded px-4 py-3 mb-1">Einfach DM an MrCatMemes oder auf TikTok abchecken. Updates kommen laufend.</div>
-      </div>
+  <!-- FAQ Section -->
+  <section id="faq" class="py-24 px-4 max-w-3xl mx-auto fadein">
+    <h2 class="text-3xl font-bold mb-10 text-green-300">FAQ</h2>
+    <div class="divide-y divide-zinc-700/60">
+      <details class="py-4 group">
+        <summary class="font-semibold cursor-pointer text-lg group-hover:text-green-400">Ist DexorEH keyfree?</summary>
+        <div class="ml-2 text-zinc-300 mt-2">Ja, komplett keyfree, keine Werbung, keine Keys, keine Paid-Features. Nur free und direkt von GitHub.</div>
+      </details>
+      <details class="py-4 group">
+        <summary class="font-semibold cursor-pointer text-lg group-hover:text-green-400">Wie benutze ich den Hub?</summary>
+        <div class="ml-2 text-zinc-300 mt-2">Copy Loadstring oben, im Executor einfügen, injecten, ready. Empfohlen: Solara, Delta, WeAreDevs.</div>
+      </details>
+      <details class="py-4 group">
+        <summary class="font-semibold cursor-pointer text-lg group-hover:text-green-400">Kann ich gebannt werden?</summary>
+        <div class="ml-2 text-zinc-300 mt-2">Risiko ist immer da, aber DexorEH läuft aktuell stabil und wurde getestet. Immer auf eigene Gefahr.</div>
+      </details>
+      <details class="py-4 group">
+        <summary class="font-semibold cursor-pointer text-lg group-hover:text-green-400">Welche Features kommen noch?</summary>
+        <div class="ml-2 text-zinc-300 mt-2">Mehr Car Mods, Easter Eggs, besseres ESP, Community-Voting Features, alles 100% Free!</div>
+      </details>
     </div>
   </section>
 
-  <!-- Team/About Section for extra length -->
-  <section id="about" class="py-20 px-4 max-w-3xl mx-auto">
-    <h2 class="text-3xl font-bold mb-6 text-green-400">About</h2>
-    <div class="text-gray-300 space-y-4">
+  <!-- About Section -->
+  <section id="about" class="py-24 px-4 max-w-3xl mx-auto fadein">
+    <h2 class="text-3xl font-bold mb-8 text-green-400">About</h2>
+    <div class="text-zinc-300 space-y-4">
       <p>
-        DexorEH wurde von aktiven Spielern entwickelt, die selbst keinen Bock mehr auf verbuggte, gesperrte, oder kostenpflichtige Hubs hatten.  
-        Das Ziel: <span class="text-green-400">Immer free</span>, immer auf dem neuesten Stand und easy für jeden zugänglich.
+        DexorEH wurde gebaut, weil die meisten großen Hubs inzwischen paid, verbuggt oder einfach lame geworden sind.  
+        Hier bekommst du <span class="text-green-300">echte Community Power</span>, kein Discord-Zwang, keine Keys, keine Adlinks. Einfach, schnell, direkt.
       </p>
       <p>
-        Security, keine Datenweitergabe, kein Login, keine nervigen Discord-Links.  
-        Die Seite bleibt für immer werbefrei und der Hub bleibt kostenlos.  
-        Wenn du Wünsche oder Bugreports hast, schreib direkt <b>MrCatMemes</b>.
+        Wenn du Ideen hast oder Bugs findest: Schreib MrCatMemes direkt auf TikTok oder Discord.<br>
+        <b>Website & Hub bleiben for free.</b>
       </p>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="w-full mt-16 mb-2 flex flex-col items-center text-gray-400 text-sm">
-    <hr class="w-32 border-zinc-700 my-2" />
+  <footer class="mt-12 mb-3 flex flex-col items-center text-zinc-400 text-sm fadein">
+    <div class="w-24 h-0.5 rounded bg-gradient-to-r from-green-400 to-cyan-400 mb-3"></div>
     <div>© 2025 DexorHubEH – by MrCatMemes</div>
   </footer>
 
   <script>
-    // FAQ Dropdown
-    document.querySelectorAll('.faq-q').forEach(el => {
-      el.addEventListener('click', function() {
-        el.classList.toggle('active');
-      });
-    });
+    // Fade-in für jede Section beim Scrollen
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) entry.target.classList.add('visible');
+        });
+      },
+      { threshold: 0.17 }
+    );
+    document.querySelectorAll('.fadein').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
