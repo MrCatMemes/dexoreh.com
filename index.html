@@ -1,256 +1,183 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DexorHubEH - Coming 31.10!</title>
-  <meta name="description" content="DexorHubEH - The next gen Roblox hub. Release on 31.10.2025.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;900&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>DexorHub – Script Loader</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
-    :root {
-      --main-bg: #191A1F;
-      --card-bg: #232429cc;
-      --accent: #6C47FF;
-      --text: #f3f4fa;
-      --subtle: #b6b8c9;
-      --border: #242434;
-      --danger: #f25454;
-      --good: #4af391;
-      --warning: #ffe66c;
-    }
-    html, body {
-      padding: 0; margin: 0;
-      background: var(--main-bg);
-      font-family: 'Inter', Arial, sans-serif;
-      color: var(--text);
+    html {
       scroll-behavior: smooth;
-      min-height: 100vh;
     }
-    header {
-      padding: 3rem 0 2rem 0;
+    body {
+      background: #181824;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .container {
+      background: #232339;
+      border-radius: 18px;
+      box-shadow: 0 4px 32px #ad7fff44;
+      padding: 48px 32px 32px 32px;
+      min-width: 320px;
       text-align: center;
-      background: linear-gradient(120deg, #191A1F 65%, #312477 100%);
-      box-shadow: 0 8px 32px #0006;
+      margin: 40px auto 24px auto;
+      max-width: 470px;
     }
     h1 {
-      font-size: 3.1rem;
-      letter-spacing: -1px;
-      font-weight: 900;
-      background: linear-gradient(90deg, #8d5cf6 20%, #65e6ea 90%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      margin: 0;
-      filter: drop-shadow(0 4px 24px #6C47FF50);
-    }
-    h2 {
-      font-size: 2.1rem;
-      margin: 2.2rem 0 .7rem;
+      font-size: 2.2rem;
+      color: #ad7fff;
+      margin-bottom: 18px;
       font-weight: 700;
-      color: var(--accent);
-      letter-spacing: -.5px;
+      letter-spacing: 2px;
     }
-    .desc {
-      font-size: 1.13rem;
-      color: var(--subtle);
-      margin: 1.3rem auto 0 auto;
-      max-width: 520px;
-      line-height: 1.7;
-    }
-    .teaser-section {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 2.3rem;
-      padding: 2.5rem 1rem 0 1rem;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .teaser {
-      background: var(--card-bg);
-      border-radius: 1.4rem;
-      box-shadow: 0 8px 32px #21213c55;
-      border: 1.5px solid var(--border);
-      padding: 2.3rem 2.1rem 2.3rem 2.1rem;
+    .loadstring-box {
+      margin: 28px 0 18px 0;
+      background: #181824;
+      padding: 18px 16px;
+      border-radius: 12px;
       display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      min-height: 260px;
-      position: relative;
-      transition: transform .17s cubic-bezier(.36,1.02,.77,1), box-shadow .2s;
+      align-items: center;
+      justify-content: space-between;
     }
-    .teaser:hover {
-      transform: translateY(-8px) scale(1.03);
-      box-shadow: 0 12px 38px #6C47FF22, 0 2px 12px #0006;
-      border-color: #6C47FF90;
+    .code {
+      font-size: 1.04rem;
+      font-family: 'Consolas', monospace;
+      background: none;
+      color: #e8e6ff;
+      border: none;
+      outline: none;
+      width: 84%;
+      user-select: all;
+      word-break: break-all;
     }
-    .teaser .feature-title {
-      font-size: 1.22rem;
-      font-weight: 700;
-      color: var(--good);
-      margin-bottom: 0.5rem;
-      letter-spacing: -.2px;
+    .copy-btn {
+      background: #ad7fff;
+      color: #181824;
+      border: none;
+      font-weight: 600;
+      border-radius: 9px;
+      font-size: 1rem;
+      padding: 8px 17px;
+      margin-left: 10px;
+      cursor: pointer;
+      transition: background .13s, color .13s;
     }
-    .teaser .feature-title.police { color: #6C47FF;}
-    .teaser .feature-title.aimbot { color: var(--danger);}
-    .teaser .feature-title.misc { color: var(--warning);}
-    .teaser .feature-title.car { color: #65e6ea;}
-    .teaser .feature-title.esp { color: #ffe66c;}
-    .teaser .feature-title.coming { color: #b6b8c9;}
-    .teaser .feature-desc {
-      font-size: 1.06rem;
-      color: var(--subtle);
-      margin-bottom: 0.7rem;
-      font-weight: 500;
-      line-height: 1.55;
+    .copy-btn:active {
+      background: #e8e6ff;
+      color: #ad7fff;
     }
     .faq-section {
-      max-width: 820px;
-      margin: 4rem auto 0 auto;
-      padding: 1.7rem 1.3rem;
+      margin-top: 48px;
+      text-align: left;
+    }
+    .faq-title {
+      font-size: 1.35rem;
+      color: #ad7fff;
+      font-weight: 600;
+      margin-bottom: 16px;
+      margin-left: 4px;
     }
     .faq-list {
-      border-radius: 1.2rem;
-      background: #1b1b24bb;
-      box-shadow: 0 4px 20px #0004;
-      padding: 2.4rem 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1.7rem;
-      margin-bottom: 3.5rem;
-      border: 1.5px solid #232342;
+      list-style: none;
+      padding: 0;
+      margin: 0;
     }
     .faq-q {
-      color: var(--accent);
-      font-size: 1.15rem;
       font-weight: 700;
-      margin-bottom: 0.2rem;
+      color: #e8e6ff;
+      margin-top: 20px;
+      font-size: 1.05rem;
     }
     .faq-a {
-      color: var(--subtle);
-      font-size: 1.03rem;
-      font-weight: 500;
-      line-height: 1.7;
-      margin-bottom: 0.1rem;
+      color: #b3b2cc;
+      font-size: .98rem;
+      margin-bottom: 6px;
+      margin-left: 1px;
     }
-    footer {
-      margin-top: 4.5rem;
-      padding: 1.2rem 0 2rem 0;
+    .footer {
+      margin-top: 40px;
+      color: #a9a9cc;
+      font-size: .97rem;
+      opacity: .7;
       text-align: center;
-      color: #888aaa;
+      margin-bottom: 8px;
+    }
+    .discord-btn {
+      display: inline-block;
+      margin-top: 12px;
+      background: #5865F2;
+      color: #fff;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
       font-size: 1.07rem;
-      letter-spacing: .1px;
-      background: #181821;
-      border-top: 1.5px solid #232342;
-      box-shadow: 0 -4px 40px #0002;
+      padding: 10px 22px;
+      text-decoration: none;
+      transition: background .15s;
+      box-shadow: 0 3px 13px #5865f244;
     }
-    /* smooooth Fade in for cards */
-    .teaser, .faq-section {
-      opacity: 0;
-      transform: translateY(45px);
-      animation: fadeInY .9s cubic-bezier(.22,1.15,.54,1) forwards;
+    .discord-btn:hover {
+      background: #4752c4;
+      color: #e8e6ff;
     }
-    .faq-section { animation-delay: .7s; }
-    .teaser:nth-child(1) { animation-delay: .3s; }
-    .teaser:nth-child(2) { animation-delay: .42s; }
-    .teaser:nth-child(3) { animation-delay: .54s; }
-    .teaser:nth-child(4) { animation-delay: .64s; }
-    .teaser:nth-child(5) { animation-delay: .76s; }
-    .teaser:nth-child(6) { animation-delay: .88s; }
-    @keyframes fadeInY {
-      to { opacity: 1; transform: none; }
-    }
-    @media (max-width: 650px) {
-      header {padding:2.1rem 0 1rem 0;}
-      h1 { font-size: 2.1rem;}
-      .teaser-section { grid-template-columns: 1fr; padding: 1.1rem .4rem 0 .4rem;}
-      .faq-section {padding: 1.1rem .4rem;}
+    @media (max-width: 600px) {
+      .container { padding: 16px 2px; }
+      .loadstring-box { flex-direction: column; gap: 10px; }
+      .code { width: 100%; }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>DexorHubEH</h1>
-    <div class="desc">
-      Der <b>neue Generation Roblox Hub</b> <br>
-      <b>Release: 31.10.2025</b> <br>
-      Police, Aimbot, Car, ESP, uvm.<br>
-      <span style="color:#b8bdf2;">Keyfree, No Pay2Win, Clean UI.</span>
+  <div class="container">
+    <h1>DexorHub</h1>
+    <div class="loadstring-box">
+      <input id="loadstring" class="code" readonly value='loadstring(game:HttpGet("http://novaw.xyz/MainScript.lua"))()'>
+      <button class="copy-btn" onclick="copyLoadstring()">Copy</button>
     </div>
-  </header>
-  <section class="teaser-section">
-    <div class="teaser">
-      <div class="feature-title police">Police</div>
-      <div class="feature-desc">
-        Alles für Cops: Radar Farm, Auto-Taser, XP Farm, <br>Stop Stick – ab 31.10 verfügbar!
-      </div>
+    <div class="faq-section" id="faq">
+      <div class="faq-title">FAQ</div>
+      <ul class="faq-list">
+        <li>
+          <div class="faq-q">Wie lade ich DexorHub?</div>
+          <div class="faq-a">Einfach den Loadstring oben kopieren und in deinen Executor einfügen, dann ausführen.</div>
+        </li>
+        <li>
+          <div class="faq-q">Ist DexorHub kostenlos?</div>
+          <div class="faq-a">Ja, komplett kostenlos. Kein Key-System, kein Linkvertise-Müll.</div>
+        </li>
+        <li>
+          <div class="faq-q">Welche Games werden unterstützt?</div>
+          <div class="faq-a">Aktuell nur Emergency Hamburg, bald mehr. Bleib auf Discord für News!</div>
+        </li>
+        <li>
+          <div class="faq-q">Gibt’s einen Discord Support?</div>
+          <div class="faq-a">Klar! Einfach unten auf den Discord-Button klicken und joinen.</div>
+        </li>
+        <li>
+          <div class="faq-q">Ist der Code geschützt?</div>
+          <div class="faq-a">Ja, wir nutzen Obfuscator & weitere Protection – kein skiddos, digga.</div>
+        </li>
+      </ul>
     </div>
-    <div class="teaser">
-      <div class="feature-title aimbot">Aimbot</div>
-      <div class="feature-desc">
-        Lock on! Präziser, smooter Aimbot – zielt wie ein Pro. FOV einstellbar.<br>
-        <b>Launch 31.10</b>
-      </div>
+    <a href="https://discord.gg/3WSPt3quY9" class="discord-btn" target="_blank">Discord Joinen</a>
+    <div class="footer">
+      &copy; 2025 DexorHub
     </div>
-    <div class="teaser">
-      <div class="feature-title car">Car Mods</div>
-      <div class="feature-desc">
-        Autofly, Godcar, Engine Mods und mehr.<br>
-        <span style="color:#65e6ea">Ab Release kostenlos!</span>
-      </div>
-    </div>
-    <div class="teaser">
-      <div class="feature-title esp">ESP</div>
-      <div class="feature-desc">
-        Teamcheck: Police,LKW, Bus – alles <b>mit Farben</b> und Live Update.
-      </div>
-    </div>
-    <div class="teaser">
-      <div class="feature-title misc">Misc</div>
-      <div class="feature-desc">
-        Self Revive, Anti-Taser, <br>& noch mehr crazy Features.
-      </div>
-    </div>
-    <div class="teaser">
-      <div class="feature-title coming">Weitere Features</div>
-      <div class="feature-desc">
-        Viele neue Sachen kommen <b>31.10</b><br>
-        Discord-Bypass,.
-      </div>
-    </div>
-  </section>
-  <section class="faq-section">
-    <h2>FAQ</h2>
-    <div class="faq-list">
-      <div>
-        <div class="faq-q">Ist DexorHubEH keyfree?</div>
-        <div class="faq-a">Ja, DexorHubEH ist <b>komplett keyfrei</b> und bleibt immer kostenlos.</div>
-      </div>
-      <div>
-        <div class="faq-q">Wann kommt der Release?</div>
-        <div class="faq-a">Am <b>31.10.2025</b> – du kannst den Hub ab dann direkt kostenlos nutzen.</div>
-      </div>
-      <div>
-        <div class="faq-q">Was ist mit Ban-Sicherheit?</div>
-        <div class="faq-a">DexorHubEH nutzt smarte Methoden, keine .bat-Dateien, keine Keylogs, kein Scam. Trotzdem: <b>Benutzung auf eigene Gefahr!</b></div>
-      </div>
-      <div>
-        <div class="faq-q">Welche Features gibt’s?</div>
-        <div class="faq-a">Aimbot, Police Stuff, Autofly, ESP, Self Revive, Godcar, <b>und immer neue Updates</b>.</div>
-      </div>
-      <div>
-        <div class="faq-q">Kann ich meinen Freund einladen?</div>
-        <div class="faq-a">Klar! DexorHubEH bleibt ohne Invite-System, open for everyone.</div>
-      </div>
-      <div>
-        <div class="faq-q">Kann ich Vorschläge einreichen?</div>
-        <div class="faq-a">Ja, einfach am Release-Tag im Hub auf „Feedback“ klicken.</div>
-      </div>
-    </div>
-  </section>
-  <footer>
-    © 2025 DexorHubEH – by MrCatMemes. Kein Verkauf, kein Pay2Win, nur Fun.<br>
-    Next Gen Roblox Hub. <span style="color:#65e6ea">Coming 31.10.2025!</span>
-  </footer>
+  </div>
+  <script>
+    function copyLoadstring() {
+      const copyText = document.getElementById('loadstring');
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      document.execCommand('copy');
+      const btn = document.querySelector('.copy-btn');
+      btn.textContent = 'Copied!';
+      setTimeout(()=>btn.textContent = 'Copy', 1300);
+    }
+  </script>
 </body>
 </html>
