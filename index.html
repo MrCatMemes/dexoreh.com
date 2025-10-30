@@ -21,30 +21,30 @@
       background: #232339;
       border-radius: 18px;
       box-shadow: 0 4px 32px #ad7fff44;
-      padding: 48px 32px 32px 32px;
+      padding: 52px 34px 40px 34px;
       min-width: 320px;
       text-align: center;
-      margin: 40px auto 24px auto;
-      max-width: 470px;
+      margin: 60px auto 32px auto;
+      max-width: 510px;
     }
     h1 {
-      font-size: 2.2rem;
+      font-size: 2.4rem;
       color: #ad7fff;
-      margin-bottom: 18px;
+      margin-bottom: 22px;
       font-weight: 700;
       letter-spacing: 2px;
     }
     .loadstring-box {
-      margin: 28px 0 18px 0;
+      margin: 38px 0 26px 0;
       background: #181824;
-      padding: 18px 16px;
+      padding: 22px 15px;
       border-radius: 12px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
     .code {
-      font-size: 1.04rem;
+      font-size: 1.09rem;
       font-family: 'Consolas', monospace;
       background: none;
       color: #e8e6ff;
@@ -71,15 +71,21 @@
       color: #ad7fff;
     }
     .faq-section {
-      margin-top: 48px;
+      margin-top: 58px;
       text-align: left;
+      max-height: 340px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #ad7fff33 #232339;
+      padding-right: 6px;
     }
     .faq-title {
       font-size: 1.35rem;
       color: #ad7fff;
       font-weight: 600;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
       margin-left: 4px;
+      text-shadow: 0 1px 2px #1111;
     }
     .faq-list {
       list-style: none;
@@ -89,26 +95,26 @@
     .faq-q {
       font-weight: 700;
       color: #e8e6ff;
-      margin-top: 20px;
-      font-size: 1.05rem;
+      margin-top: 22px;
+      font-size: 1.09rem;
     }
     .faq-a {
       color: #b3b2cc;
       font-size: .98rem;
-      margin-bottom: 6px;
+      margin-bottom: 7px;
       margin-left: 1px;
     }
     .footer {
-      margin-top: 40px;
+      margin-top: 45px;
       color: #a9a9cc;
       font-size: .97rem;
-      opacity: .7;
+      opacity: .75;
       text-align: center;
       margin-bottom: 8px;
     }
     .discord-btn {
       display: inline-block;
-      margin-top: 12px;
+      margin-top: 22px;
       background: #5865F2;
       color: #fff;
       font-weight: 700;
@@ -125,9 +131,10 @@
       color: #e8e6ff;
     }
     @media (max-width: 600px) {
-      .container { padding: 16px 2px; }
+      .container { padding: 13px 1px; }
       .loadstring-box { flex-direction: column; gap: 10px; }
       .code { width: 100%; }
+      .faq-section { max-height: 230px; }
     }
   </style>
 </head>
@@ -143,23 +150,43 @@
       <ul class="faq-list">
         <li>
           <div class="faq-q">Wie lade ich DexorHub?</div>
-          <div class="faq-a">Einfach den Loadstring oben kopieren und in deinen Executor einfügen, dann ausführen.</div>
+          <div class="faq-a">Oben Loadstring kopieren, Executor öffnen, einfügen und ausführen.</div>
         </li>
         <li>
           <div class="faq-q">Ist DexorHub kostenlos?</div>
-          <div class="faq-a">Ja, komplett kostenlos. Kein Key-System, kein Linkvertise-Müll.</div>
+          <div class="faq-a">Jo, kein Paywall/Key-System oder sonst was.</div>
         </li>
         <li>
           <div class="faq-q">Welche Games werden unterstützt?</div>
-          <div class="faq-a">Aktuell nur Emergency Hamburg, bald mehr. Bleib auf Discord für News!</div>
+          <div class="faq-a">Im Moment Emergency Hamburg – Updates kommen auf Discord.</div>
         </li>
         <li>
-          <div class="faq-q">Gibt’s einen Discord Support?</div>
-          <div class="faq-a">Klar! Einfach unten auf den Discord-Button klicken und joinen.</div>
+          <div class="faq-q">Kann ich DexorHub auf Mobile nutzen?</div>
+          <div class="faq-a">Klar, aber du brauchst nen Mobile-Executor wie Arceus X.</div>
         </li>
         <li>
-          <div class="faq-q">Ist der Code geschützt?</div>
-          <div class="faq-a">Ja, wir nutzen Obfuscator & weitere Protection – kein skiddos, digga.</div>
+          <div class="faq-q">Gibt’s Support?</div>
+          <div class="faq-a">Immer. Discord unten, join rein, hol Support.</div>
+        </li>
+        <li>
+          <div class="faq-q">Ist mein Account sicher?</div>
+          <div class="faq-a">Dein Roblox Account wird nicht abgefragt oder gespeichert.</div>
+        </li>
+        <li>
+          <div class="faq-q">Kann ich das Script auch teilen?</div>
+          <div class="faq-a">Klar, schick einfach die Seite weiter. Safe und public.</div>
+        </li>
+        <li>
+          <div class="faq-q">Welche Executor gehen?</div>
+          <div class="faq-a">Alles was loadstring kann: Synapse, Krnl, Delta, Trigon, usw.</div>
+        </li>
+        <li>
+          <div class="faq-q">Gibt’s Updates?</div>
+          <div class="faq-a">Bro, fast jeden Tag. Check Discord!</div>
+        </li>
+        <li>
+          <div class="faq-q">Code geklaut?</div>
+          <div class="faq-a">Nein. Eigene Entwicklung, kein Skid. Mehr Protection als Nova & Vortex ;)</div>
         </li>
       </ul>
     </div>
