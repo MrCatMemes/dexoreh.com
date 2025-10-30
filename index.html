@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>DexorHub – Script Loader</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background: #181824;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      min-height: 100vh;
+    }
+    .container {
+      background: #232339;
+      border-radius: 18px;
+      box-shadow: 0 4px 32px #ad7fff44;
+      padding: 52px 34px 40px 34px;
+      min-width: 320px;
+      text-align: center;
+      margin: 60px auto 32px auto;
+      max-width: 600px;
+    }
+    h1 {
+      font-size: 2.4rem;
+      color: #ad7fff;
+      margin-bottom: 22px;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    .loadstring-box {
+      margin: 38px 0 26px 0;
+      background: #181824;
+      padding: 22px 15px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .code {
+      font-size: 1.09rem;
+      font-family: 'Consolas', monospace;
+      background: none;
+      color: #e8e6ff;
+      border: none;
+      outline: none;
+      width: 84%;
+      user-select: all;
+      word-break: break-all;
+    }
+    .copy-btn {
+      background: #ad7fff;
+      color: #181824;
+      border: none;
+      font-weight: 600;
+      border-radius: 9px;
+      font-size: 1rem;
+      padding: 8px 17px;
+      margin-left: 10px;
+      cursor: pointer;
+      transition: background .13s, color .13s;
+    }
+    .copy-btn:active {
+      background: #e8e6ff;
+      color: #ad7fff;
+    }
+    /* --- Langer Bereich --- */
+    .section {
+      background: #232339ee;
+      margin: 55px auto 0 auto;
+      max-width: 610px;
+      border-radius: 16px;
+      padding: 38px 22px 32px 22px;
+      box-shadow: 0 2px 12px #ad7fff14;
+      text-align: left;
+      min-height: 200px;
+    }
+    .section h2 {
+      color: #ad7fff;
+      font-size: 1.5rem;
+      margin-bottom: 19px;
+      font-weight: 600;
+    }
+    .faq-section {
+      margin-top: 58px;
+      text-align: left;
+    }
+    .faq-title {
+      font-size: 1.35rem;
+      color: #ad7fff;
+      font-weight: 600;
+      margin-bottom: 20px;
+      margin-left: 4px;
+      text-shadow: 0 1px 2px #1111;
+    }
+    .faq-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .faq-q {
+      font-weight: 700;
+      color: #e8e6ff;
+      margin-top: 22px;
+      font-size: 1.09rem;
+    }
+    .faq-a {
+      color: #b3b2cc;
+      font-size: .98rem;
+      margin-bottom: 7px;
+      margin-left: 1px;
+    }
+    .footer {
+      margin-top: 45px;
+      color: #a9a9cc;
+      font-size: .97rem;
+      opacity: .75;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .discord-btn {
+      display: inline-block;
+      margin-top: 22px;
+      background: #5865F2;
+      color: #fff;
+      font-weight: 700;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.07rem;
+      padding: 10px 22px;
+      text-decoration: none;
+      transition: background .15s;
+      box-shadow: 0 3px 13px #5865f244;
+    }
+    .discord-btn:hover {
+      background: #4752c4;
+      color: #e8e6ff;
+    }
+    @media (max-width: 650px) {
+      .container, .section { max-width: 97vw; padding: 7vw 3vw; }
+      .loadstring-box { flex-direction: column; gap: 10px; }
+      .code { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>DexorHub</h1>
+    <div class="loadstring-box">
+      <input id="loadstring" class="code" readonly value='loadstring(game:HttpGet("https://dexoreh.com/dexoreh.lua"))()'>
+      <button class="copy-btn" onclick="copyLoadstring()">Copy</button>
+    </div>
+  </div>
+
+  <!-- SECTION: Screenshots/Showcase (kannst du füllen oder leer lassen) -->
+  <div class="section" id="screenshots">
+    <h2>Screenshots</h2>
+    <p>Kommt bald! Oder check die besten Clips im <a href="https://discord.gg/3WSPt3quY9" style="color:#ad7fff;font-weight:600;" target="_blank">Discord</a>!</p>
+  </div>
+
+  <!-- SECTION: FAQ -->
+  <div class="section faq-section" id="faq">
+    <div class="faq-title">FAQ</div>
+    <ul class="faq-list">
+      <li>
+        <div class="faq-q">Wie lade ich DexorHub?</div>
+        <div class="faq-a">Oben Loadstring kopieren, Executor öffnen, einfügen und ausführen.</div>
+      </li>
+      <li>
+        <div class="faq-q">Ist DexorHub kostenlos?</div>
+        <div class="faq-a">Jo, komplett free. Kein Keysystem, kein Paywall!</div>
+      </li>
+      <li>
+        <div class="faq-q">Welche Games gehen?</div>
+        <div class="faq-a">Aktuell Emergency Hamburg, neue Games kommen immer.</div>
+      </li>
+      <li>
+        <div class="faq-q">Mobile Support?</div>
+        <div class="faq-a">Klar, wenn du nen Mobile-Executor wie Arceus X hast.</div>
+      </li>
+      <li>
+        <div class="faq-q">Support?</div>
+        <div class="faq-a">Discord unten, join rein!</div>
+      </li>
+      <li>
+        <div class="faq-q">Executor?</div>
+        <div class="faq-a">Jeder der loadstring kann, also Synapse, Krnl, Delta, Trigon usw.</div>
+      </li>
+      <li>
+        <div class="faq-q">Updates?</div>
+        <div class="faq-a">Klar, fast jede Woche – Discord checken!</div>
+      </li>
+      <li>
+        <div class="faq-q">DexorHub safe?</div>
+        <div class="faq-a">Jo, eigene Entwicklung. Mehr Protection als die meisten Hubs.</div>
+      </li>
+    </ul>
+  </div>
+
+  <!-- SECTION: Kontakt/Discord -->
+  <div class="section" id="contact">
+    <h2>Kontakt & Support</h2>
+    <p>Join <a href="https://discord.gg/3WSPt3quY9" class="discord-btn" target="_blank">unseren Discord</a> für Support, News und Community!</p>
+  </div>
+
+  <!-- Fake-Sektion zum Verlängern der Seite für extra Scroll (optional) -->
+  <div class="section" style="min-height:300px;opacity:0.01;pointer-events:none;">
+    <!-- Leerer Platz damit Seite noch länger zum scrollen ist, kannst du rauslöschen oder mit Stuff füllen -->
+  </div>
+
+  <div class="footer">
+    &copy; 2025 DexorHub | <a href="#faq" style="color:#ad7fff;">Nach oben</a>
+  </div>
+
+  <script>
+    function copyLoadstring() {
+      const copyText = document.getElementById('loadstring');
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      document.execCommand('copy');
+      const btn = document.querySelector('.copy-btn');
+      btn.textContent = 'Copied!';
+      setTimeout(()=>btn.textContent = 'Copy', 1300);
+    }
+  </script>
+</body>
+</html>
